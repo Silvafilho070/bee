@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeeFund - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="logo">
+            <!--<img src="#" alt="BeeFundlogo">-->
+            <h2>BEEFUND</h2>
+        </div>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required />
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Senha" required />
+                <span class="show-password" onclick="togglePasswordVisibility()">👁️</span>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox" id="rememberMe" /> Lembre-se</label>
+                <a href="#" onclick="alert('Funcionalidade em desenvolvimento.')">Esqueceu sua senha?</a>
+            </div>
+            <button type="submit">Entrar</button>
+            <div class="create-account">
+                <a href="#" onclick="goToRegisterPage()">Criar sua conta</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const rememberMe = document.getElementById('rememberMe');
+        const button = form.querySelector('button');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('rememberMe') === 'true') {
+                emailInput.value = localStorage.getItem('email') || '';
+                passwordInput.value = localStorage.getItem('password') || '';
+                rememberMe.checked = true;
+            }
+        });
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            button.classList.add('loading');
+
+            setTimeout(() => {
+                button.classList.remove('loading');
+
+                const email = emailInput.value.trim();
+                const password = passwordInput.value.trim();
+
+                if (!email || !password) {
+                    alert('Por favor, preencha todos os campos.');
+                    return;
+                }
+
+                if (rememberMe.checked) {
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('password', password);
+                    localStorage.setItem('rememberMe', true);
+                } else {
+                    localStorage.removeItem('email');
+                    localStorage.removeItem('password');
+                    localStorage.removeItem('rememberMe');
+                }
+
+                const storedEmail = localStorage.getItem('accountEmail');
+                const storedPassword = localStorage.getItem('accountPassword');
+
+                if (email === storedEmail && password === storedPassword) {
+                    alert('Login bem-sucedido!');
+                    window.location.href = 'dashboard.html';
+                } else {
+                    alert('Credenciais incorretas.');
+                }
+            }, 1000);
+        });
+
+        function togglePasswordVisibility() {
+            const password = document.getElementById('password');
+            password.type = password.type === 'password' ? 'text' : 'password';
+        }
+
+        function goToRegisterPage() {
+            window.location.href = 'register.html';
+        }
+    </script>
+</body>
+
+</html>

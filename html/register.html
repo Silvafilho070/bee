@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeeFund - Cadastro</title>
+  <style>
+    :root {
+      --primary-color: #1dd1a1;
+      --dark-bg: #0f1115;
+      --card-bg: #121828;
+      --text-color: #ffffff;
+      --input-bg: transparent;
+      --input-border: #333;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--input-border);
+      border-radius: 8px;
+      background: var(--input-bg);
+      color: var(--text-color);
+      transition: border-color 0.3s;
+    }
+
+    .input-group input:focus {
+      border-color: var(--primary-color);
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    button.loading {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    button.loading::after {
+      content: '';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      border: 2px solid white;
+      border-top: 2px solid transparent;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      transform: translateY(-50%);
+    }
+
+    @keyframes spin {
+      0% {
+        transform: translateY(-50%) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-50%) rotate(360deg);
+      }
+    }
+
+    .login-link {
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://via.placeholder.com/50x50.png?text=B" alt="BeeFund logo">
+      <h2>Cadastro - BEEFUND</h2>
+    </div>
+    <form id="registerForm">
+      <div class="input-group">
+        <input type="email" id="newEmail" placeholder="Email" required />
+      </div>
+      <div class="input-group">
+        <input type="password" id="newPassword" placeholder="Senha" required />
+      </div>
+      <div class="input-group">
+        <input type="password" id="confirmPassword" placeholder="Confirme a senha" required />
+      </div>
+      <button type="submit">Criar Conta</button>
+      <div class="login-link">
+        <a href="index.html">Já tem conta? Faça login</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const registerForm = document.getElementById('registerForm');
+    const submitButton = registerForm.querySelector('button');
+
+    registerForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('newEmail').value.trim();
+      const password = document.getElementById('newPassword').value.trim();
+      const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+      if (!email || !password || !confirmPassword) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('As senhas não coincidem.');
+        return;
+      }
+
+      submitButton.classList.add('loading');
+      submitButton.textContent = 'Criando...';
+
+      setTimeout(() => {
+        localStorage.setItem('accountEmail', email);
+        localStorage.setItem('accountPassword', password);
+
+        alert('Conta criada com sucesso!');
+        window.location.href = 'index.html';
+      }, 1500); // Simulação de delay de carregamento
+    });
+  </script>
+</body>
+
+</html>

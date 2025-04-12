@@ -106,7 +106,7 @@ button {
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 button.loading::after {

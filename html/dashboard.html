@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beefund Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0c0e16;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <div class="p-4">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-4">
+            <div class="text-2xl font-bold text-green-400">BEEFUND</div>
+            <div class="flex space-x-3">
+                <button class="bg-green-500 p-2 rounded-full">🔔</button>
+                <button class="bg-green-500 p-2 rounded-full">👤</button>
+            </div>
+        </div>
+
+        <!-- Balance Cards -->
+        <div class="bg-cover bg-center rounded-lg p-6 mb-4 relative" style="background-image: url('https://cdn.pixabay.com/photo/2017/07/12/15/43/bitcoin-2493419_1280.jpg');">
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                    <p class="text-sm">Ordem</p>
+                    <p class="text-lg font-semibold">$0,35</p>
+                </div>
+                <div>
+                    <p class="text-sm">Total Ganhos</p>
+                    <p class="text-lg font-semibold">$1,50</p>
+                </div>
+                <div>
+                    <p class="text-sm">Total Indicação</p>
+                    <p class="text-lg font-semibold">$0,00</p>
+                </div>
+                <div>
+                    <p class="text-sm">Total Investido</p>
+                    <p class="text-lg font-semibold">$26,00</p>
+                </div>
+                <div>
+                    <p class="text-sm">Total Saques</p>
+                    <p class="text-lg font-semibold">$5,00</p>
+                </div>
+                <div>
+                    <p class="text-sm">Saldo Indisponível</p>
+                    <p class="text-lg font-semibold">$0,52</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Channel Button -->
+        <div class="mb-4 text-center">
+            <p class="text-xs mb-1">Usuário <span class="text-green-400">*****8826</span> Saldo: <span class="text-green-400">0,52 USDT</span></p>
+            <button class="bg-green-500 text-white px-6 py-2 rounded-full">NOSSOS CANAIS 📣</button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex justify-center mb-4">
+            <button class="bg-green-400 px-4 py-2 rounded-l-full">Mercado</button>
+            <button class="bg-gray-800 px-4 py-2 rounded-r-full">Meus Depósitos</button>
+        </div>
+
+        <!-- List of Traders -->
+        <div class="space-y-4">
+            <!-- Trader Cards -->
+            <!-- Sabrina Gan -->
+            <div class="bg-gray-800 rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-gray-700 rounded-full p-2">👩‍💼</div>
+                        <div>
+                            <p class="font-semibold">Sabrina Gan</p>
+                            <p class="text-xs text-gray-400">1 dia | Pausa</p>
+                        </div>
+                    </div>
+                    <button class="bg-green-500 px-3 py-1 rounded text-xs">Assinar</button>
+                </div>
+                <div class="grid grid-cols-3 text-center mt-3 text-sm">
+                    <div>
+                        <p>3%</p>
+                        <p class="text-gray-400">Imp. de lucro diário</p>
+                    </div>
+                    <div>
+                        <p>3%</p>
+                        <p class="text-gray-400">Total</p>
+                    </div>
+                    <div>
+                        <p>1095%</p>
+                        <p class="text-gray-400">Taxa de retorno anual</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corretores Interativos -->
+            <div class="bg-gray-800 rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-red-500 rounded-full p-2">🏢</div>
+                        <div>
+                            <p class="font-semibold">Corretores Interativos</p>
+                            <p class="text-xs text-gray-400">3 dias | Pausa</p>
+                        </div>
+                    </div>
+                    <button class="bg-green-500 px-3 py-1 rounded text-xs">Assinar</button>
+                </div>
+                <div class="grid grid-cols-3 text-center mt-3 text-sm">
+                    <div>
+                        <p>3,34%</p>
+                        <p class="text-gray-400">Imp. de lucro diário</p>
+                    </div>
+                    <div>
+                        <p>10,02%</p>
+                        <p class="text-gray-400">Total</p>
+                    </div>
+                    <div>
+                        <p>1210,1%</p>
+                        <p class="text-gray-400">Taxa de retorno anual</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pedra-pimenta -->
+            <div class="bg-gray-800 rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-blue-500 rounded-full p-2">🧂</div>
+                        <div>
+                            <p class="font-semibold">Pedra-pimenta</p>
+                            <p class="text-xs text-gray-400">7 dias | Pausa</p>
+                        </div>
+                    </div>
+                    <button class="bg-green-500 px-3 py-1 rounded text-xs">Assinar</button>
+                </div>
+                <div class="grid grid-cols-3 text-center mt-3 text-sm">
+                    <div>
+                        <p>2,29%</p>
+                        <p class="text-gray-400">Imp. de lucro diário</p>
+                    </div>
+                    <div>
+                        <p>16,03%</p>
+                        <p class="text-gray-400">Total</p>
+                    </div>
+                    <div>
+                        <p>835,88%</p>
+                        <p class="text-gray-400">Taxa de retorno anual</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- João Gerdes -->
+            <div class="bg-gray-800 rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-green-500 rounded-full p-2">👨‍💼</div>
+                        <div>
+                            <p class="font-semibold">João Gerdes</p>
+                            <p class="text-xs text-gray-400">15 dias | Luz Disponível</p>
+                        </div>
+                    </div>
+                    <button class="bg-green-500 px-3 py-1 rounded text-xs">Assinar</button>
+                </div>
+                <div class="grid grid-cols-3 text-center mt-3 text-sm">
+                    <div>
+                        <p>3,29%</p>
+                        <p class="text-gray-400">Imp. de lucro diário</p>
+                    </div>
+                    <div>
+                        <p>23,03%</p>
+                        <p class="text-gray-400">Total</p>
+                    </div>
+                    <div>
+                        <p>1200,85%</p>
+                        <p class="text-gray-400">Taxa de retorno anual</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ana Richards -->
+            <div class="bg-gray-800 rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-yellow-500 rounded-full p-2">👩‍💼</div>
+                        <div>
+                            <p class="font-semibold">Ana Richards</p>
+                            <p class="text-xs text-gray-400">15 dias | Pausa</p>
+                        </div>
+                    </div>
+                    <button class="bg-green-500 px-3 py-1 rounded text-xs">Assinar</button>
+                </div>
+                <div class="grid grid-cols-3 text-center mt-3 text-sm">
+                    <div>
+                        <p>3,13%</p>
+                        <p class="text-gray-400">Imp. de lucro diário</p>
+                    </div>
+                    <div>
+                        <p>46,95%</p>
+                        <p class="text-gray-400">Total</p>
+                    </div>
+                    <div>
+                        <p>1142,45%</p>
+                        <p class="text-gray-400">Taxa de retorno anual</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tradovate -->
+            <div class="bg-gray-800 rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-blue-500 rounded-full p-2">📈</div>
+                        <div>
+                            <p class="font-semibold">Tradovate</p>
+                            <p class="text-xs text-gray-400">30 dias | Luz Disponível</p>
+                        </div>
+                    </div>
+                    <button class="bg-green-500 px-3 py-1 rounded text-xs">Assinar</button>
+                </div>
+                <div class="grid grid-cols-3 text-center mt-3 text-sm">
+                    <div>
+                        <p>3,54%</p>
+                        <p class="text-gray-400">Imp. de lucro diário</p>
+                    </div>
+                    <div>
+                        <p>106,2%</p>
+                        <p class="text-gray-400">Total</p>
+                    </div>
+                    <div>
+                        <p>1292,1%</p>
+                        <p class="text-gray-400">Taxa de retorno anual</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

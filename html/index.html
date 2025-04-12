@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BeeFund - Login</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="dashboard" href="dashboard.html">
+    <link rel="stylesheet" href="register.html">
 </head>
 
 <body>
@@ -78,7 +80,7 @@
                 const storedPassword = localStorage.getItem('accountPassword');
 
                 if (email === storedEmail && password === storedPassword) {
-                    alert('Login bem-sucedido!');
+                    //alert('Login bem-sucedido!');
                     window.location.href = 'dashboard.html';
                 } else {
                     alert('Credenciais incorretas.');
